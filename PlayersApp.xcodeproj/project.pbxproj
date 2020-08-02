@@ -19,6 +19,8 @@
 		952E19D324D711530019A7DE /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D224D711530019A7DE /* SelectPlayerViewController.swift */; };
 		952E19D624D7128F0019A7DE /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D524D7128F0019A7DE /* PlayerController.swift */; };
 		952E19D924D715CB0019A7DE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */; };
+		9556344624D722AB00B472E8 /* ScoreboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */; };
+		9556344824D722C000B472E8 /* PlayerScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344724D722C000B472E8 /* PlayerScoreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		952E19D224D711530019A7DE /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		952E19D524D7128F0019A7DE /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewController.swift; sourceTree = "<group>"; };
+		9556344724D722C000B472E8 /* PlayerScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			children = (
 				952E19D024D709C20019A7DE /* MainMenuViewController.swift */,
 				952E19D224D711530019A7DE /* SelectPlayerViewController.swift */,
+				9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */,
+				9556344724D722C000B472E8 /* PlayerScoreTableViewCell.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9556344824D722C000B472E8 /* PlayerScoreTableViewCell.swift in Sources */,
 				952E19D124D709C20019A7DE /* MainMenuViewController.swift in Sources */,
+				9556344624D722AB00B472E8 /* ScoreboardTableViewController.swift in Sources */,
 				952E19CB24D706230019A7DE /* Players+Convenience.swift in Sources */,
 				952E19D624D7128F0019A7DE /* PlayerController.swift in Sources */,
 				952E19C924D705EF0019A7DE /* CoreDataStack.swift in Sources */,
