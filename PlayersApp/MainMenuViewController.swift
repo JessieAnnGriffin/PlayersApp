@@ -11,6 +11,7 @@ import UIKit
 class MainMenuViewController: UIViewController {
 
     let playerController = PlayerController()
+    let gameController = GameController()
     let cornerRadius = 20
 
     @IBOutlet weak var startButton: UIButton!
@@ -36,10 +37,20 @@ class MainMenuViewController: UIViewController {
         case "ShowSelectPlayer1":
             if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
                 selectPlayerVC.title = "Select Player 1"
+                selectPlayerVC.gameController = gameController
             }
         case "ShowSelectPlayer2":
             if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
                 selectPlayerVC.title = "Select Player 2"
+                selectPlayerVC.gameController = gameController
+            }
+        case "ShowScoreboard":
+            if let scoreboardVC = segue.destination as? ScoreboardTableViewController {
+                scoreboardVC.playerController = playerController
+            }
+        case "ShowGameEmulator":
+            if let gameVC = segue.destination as? GameEmulatorViewController {
+                gameVC.gameController = gameController
             }
         default:
             break

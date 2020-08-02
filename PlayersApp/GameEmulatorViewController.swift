@@ -18,13 +18,14 @@ class GameEmulatorViewController: UIViewController {
     @IBOutlet weak var playerTwoWinsButton: UIButton!
     @IBOutlet weak var tieButton: UIButton!
 
-    let gameController = GameController()
+    var gameController: GameController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         playerOneWinsButton.layer.cornerRadius = CGFloat(cornerRadius)
         playerTwoWinsButton.layer.cornerRadius = CGFloat(cornerRadius)
         tieButton.layer.cornerRadius = CGFloat(cornerRadius)
+        
         updateViews()
     }
     
@@ -41,8 +42,8 @@ class GameEmulatorViewController: UIViewController {
     }
 
     private func updateViews() {
-        guard let playerOne = gameController.playerOne?.name,
-            let playerTwo = gameController.playerTwo?.name else { return }
+        guard let playerOne = gameController?.playerOne?.name,
+            let playerTwo = gameController?.playerTwo?.name else { return }
 
         playerOneLabel.text = playerOne
         playerTwoLabel.text = playerTwo
@@ -69,11 +70,11 @@ class GameEmulatorViewController: UIViewController {
         self.present(alertController, animated: true)
     }
     func updateScores(_ sender: UIButton) {
-        guard let playerOne = gameController.playerOne else {
+        guard let playerOne = gameController?.playerOne else {
             self.showAlert(player: "player one")
             return
         }
-        guard let playerTwo = gameController.playerTwo else {
+        guard let playerTwo = gameController?.playerTwo else {
             self.showAlert(player: "player two")
             return
         }

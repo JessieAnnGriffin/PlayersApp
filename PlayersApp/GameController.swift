@@ -11,6 +11,4 @@ import Foundation
 class GameController {
     var playerOne: Player?
     var playerTwo: Player?
-
-    
 }

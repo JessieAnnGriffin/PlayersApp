@@ -11,7 +11,6 @@ import CoreData
 
 class SelectPlayerViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet weak var selectPlayerLabel: UILabel!
     @IBOutlet weak var playersTableView: UITableView!
 
     private lazy var fetchedResultsController: NSFetchedResultsController<Player> = {
@@ -30,28 +29,17 @@ class SelectPlayerViewController: UIViewController, NSFetchedResultsControllerDe
         return frc
     }()
 
+    var gameController: GameController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         playersTableView.dataSource = self
         playersTableView.delegate = self
         playersTableView.reloadData()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource {
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fetchedResultsController.sections?[section].numberOfObjects ?? 0
@@ -65,5 +53,44 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let player = fetchedResultsController.object(at: indexPath)
+        showAlert(player: player)
+        if title == "Select Player 1" {
+            gameController?.playerOne = player
+        } else {
+            gameController?.playerTwo = player
+        }
+    }
 
+    func showAlert(player: Player) {
+        guard let player = player.name else { return }
+        if title == "Select Player 1" {
+            let alertController = UIAlertController(
+                title: "Player One is \(player)",
+                message: "",
+                preferredStyle: .alert)
+            let alertAction = UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: { _ in
+                    self.navigationController?.popToRootViewController(animated: true)
+            })
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
+        } else {
+            let alertController = UIAlertController(
+                title: "Player Two is \(player)",
+                message: "",
+                preferredStyle: .alert)
+            let alertAction = UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: { _ in
+                    self.navigationController?.popToRootViewController(animated: true)
+            })
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
+        }
+    }
 }
