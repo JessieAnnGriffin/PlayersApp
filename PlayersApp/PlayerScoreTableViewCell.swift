@@ -10,15 +10,28 @@ import UIKit
 
 class PlayerScoreTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
+    @IBOutlet weak var tiesLabel: UILabel!
+
+    var player: Player? {
+        didSet {
+            updateViews()
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    private func updateViews() {
+//        if let player = player {
+//            nameLabel.text = player.name
+//            winsLabel.text = "\(player.wins)"
+//            lossesLabel.text = "\(player.losses)"
+//            tiesLabel.text = "\(player.ties)"
+//        }
 
-        // Configure the view for the selected state
+        nameLabel.text = player?.name
+        winsLabel.text = "\(String(describing: player?.wins))"
+        lossesLabel.text = "\(String(describing: player?.losses))"
+        tiesLabel.text = "\(String(describing: player?.ties))"
     }
-
 }
