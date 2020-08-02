@@ -271,6 +271,9 @@
                         <outlet property="playerTwoLabel" destination="jvW-xV-nJj" id="X7j-5R-9T8"/>
                         <outlet property="playerTwoWinsButton" destination="zqU-xD-CzN" id="3sp-Ng-ieg"/>
                         <outlet property="tieButton" destination="G3k-OW-Bwc" id="Dch-VD-6tO"/>
+                        <segue destination="tJF-XC-rih" kind="show" identifier="SelectMissingPlayer1" id="u37-jh-ExK"/>
+                        <segue destination="tJF-XC-rih" kind="show" identifier="SelectMissingPlayer2" id="rBd-0A-MZI"/>
+                        <segue destination="Rcf-UL-vRw" kind="show" identifier="ShowScoreboardNow" id="hgZ-KW-cmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYJ-Ij-hV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -435,6 +438,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Fb-8P-e22"/>
+        <segue reference="hgZ-KW-cmU"/>
+        <segue reference="rBd-0A-MZI"/>
     </inferredMetricsTieBreakers>
 </document>

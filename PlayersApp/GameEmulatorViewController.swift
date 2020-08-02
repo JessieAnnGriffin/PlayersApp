@@ -43,8 +43,15 @@ class GameEmulatorViewController: UIViewController {
     }
 
     private func updateViews() {
-        guard let playerOne = gameController?.playerOne?.name,
-            let playerTwo = gameController?.playerTwo?.name else { return }
+
+        guard let playerOne = gameController?.playerOne?.name else {
+            self.showAlert(player: "player one")
+            return
+        }
+        guard let playerTwo = gameController?.playerTwo?.name else {
+            self.showAlert(player: "player two")
+            return
+        }
 
         playerOneLabel.text = playerOne
         playerTwoLabel.text = playerTwo
@@ -57,13 +64,17 @@ class GameEmulatorViewController: UIViewController {
     func showAlert(player: String) {
         let alertController = UIAlertController(
             title: "Missing player!",
-            message: "PLease choose \(player).",
+            message: "Please choose \(player).",
             preferredStyle: .alert)
         let alertAction = UIAlertAction(
             title: "OK",
             style: UIAlertAction.Style.default,
             handler: { _ in
-                self.navigationController?.popToRootViewController(animated: true)
+                if player == "player one" {
+                    self.performSegue(withIdentifier: "SelectMissingPlayer1", sender: nil)
+                } else {
+                    self.performSegue(withIdentifier: "SelectMissingPlayer2", sender: nil)
+                }
         })
 
         alertController.addAction(alertAction)
@@ -72,11 +83,9 @@ class GameEmulatorViewController: UIViewController {
     
     func updateScores(_ sender: UIButton) {
         guard let playerOne = gameController?.playerOne else {
-            self.showAlert(player: "player one")
             return
         }
         guard let playerTwo = gameController?.playerTwo else {
-            self.showAlert(player: "player two")
             return
         }
 
@@ -95,6 +104,23 @@ class GameEmulatorViewController: UIViewController {
             try? CoreDataStack.shared.save()
         default:
             break
+        }
+        performSegue(withIdentifier: "ShowScoreboardNow", sender: nil)
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "SelectMissingPlayer1" {
+            if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
+                selectPlayerVC.title = "Select Player 1"
+                selectPlayerVC.gameController = gameController
+            }
+        } else if segue.identifier == "SelectMissingPlayer2" {
+            if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
+                selectPlayerVC.title = "Select Player 2"
+                selectPlayerVC.gameController = gameController
+            }
         }
     }
 }
