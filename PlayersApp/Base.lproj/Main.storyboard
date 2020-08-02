@@ -167,17 +167,111 @@
             </objects>
             <point key="canvasLocation" x="2336" y="557"/>
         </scene>
-        <!--View Controller-->
+        <!--Game time!-->
         <scene sceneID="f0K-to-p30">
             <objects>
-                <viewController id="FXT-hX-YFR" sceneMemberID="viewController">
+                <viewController id="FXT-hX-YFR" customClass="GameEmulatorViewController" customModule="PlayersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ILb-KB-8cx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kRr-Fx-a2s">
+                                <rect key="frame" x="127.5" y="180" width="159" height="183"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avk-w7-c8u">
+                                        <rect key="frame" x="36.5" y="0.0" width="86.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-Y2-VxX" userLabel="Player One Name">
+                                        <rect key="frame" x="0.0" y="40.5" width="159" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-da-WMN">
+                                        <rect key="frame" x="36" y="101.5" width="87" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvW-xV-nJj" userLabel="Player Two Name">
+                                        <rect key="frame" x="1" y="142" width="157.5" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WAk-3Z-ozM">
+                                <rect key="frame" x="87" y="407" width="240" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztc-Rt-wpV">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="90"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Player 1 wins!"/>
+                                        <connections>
+                                            <action selector="player1WinsPressed:" destination="FXT-hX-YFR" eventType="touchUpInside" id="hI8-Oi-DyA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqU-xD-CzN">
+                                        <rect key="frame" x="0.0" y="130" width="240" height="90"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Player 2 wins!"/>
+                                        <connections>
+                                            <action selector="player2WinsPressed:" destination="FXT-hX-YFR" eventType="touchUpInside" id="HwH-QH-HF0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3k-OW-Bwc">
+                                        <rect key="frame" x="0.0" y="260" width="240" height="90"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="It's a tie!"/>
+                                        <connections>
+                                            <action selector="itsATiePressed:" destination="FXT-hX-YFR" eventType="touchUpInside" id="5Hg-M7-fS7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="OUr-uh-3jT"/>
+                                    <constraint firstAttribute="height" constant="350" id="uaT-JV-wiP"/>
+                                </constraints>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugT-cG-lOg">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="By: Jessie Griffin" id="KfS-Iy-02J">
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kRr-Fx-a2s" firstAttribute="top" secondItem="Trq-om-x8a" secondAttribute="top" constant="40" id="5PJ-Tq-vJR"/>
+                            <constraint firstItem="ugT-cG-lOg" firstAttribute="leading" secondItem="ILb-KB-8cx" secondAttribute="leading" id="6Fc-xu-smg"/>
+                            <constraint firstItem="WAk-3Z-ozM" firstAttribute="top" secondItem="kRr-Fx-a2s" secondAttribute="bottom" constant="44" id="WfE-dD-1M8"/>
+                            <constraint firstItem="Trq-om-x8a" firstAttribute="bottom" secondItem="ugT-cG-lOg" secondAttribute="bottom" id="bRV-WN-TPa"/>
+                            <constraint firstItem="Trq-om-x8a" firstAttribute="trailing" secondItem="ugT-cG-lOg" secondAttribute="trailing" id="ike-fg-FvZ"/>
+                            <constraint firstItem="WAk-3Z-ozM" firstAttribute="centerX" secondItem="ILb-KB-8cx" secondAttribute="centerX" id="lh3-ob-3Wm"/>
+                            <constraint firstItem="kRr-Fx-a2s" firstAttribute="centerX" secondItem="ILb-KB-8cx" secondAttribute="centerX" id="r7y-VG-1aH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Trq-om-x8a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Qjr-RP-mEd"/>
+                    <navigationItem key="navigationItem" title="Game time!" id="Qjr-RP-mEd"/>
+                    <connections>
+                        <outlet property="playerOneLabel" destination="cfj-Y2-VxX" id="PLx-F6-aBM"/>
+                        <outlet property="playerOneWinsButton" destination="ztc-Rt-wpV" id="EDH-bB-f4D"/>
+                        <outlet property="playerTwoLabel" destination="jvW-xV-nJj" id="X7j-5R-9T8"/>
+                        <outlet property="playerTwoWinsButton" destination="zqU-xD-CzN" id="3sp-Ng-ieg"/>
+                        <outlet property="tieButton" destination="G3k-OW-Bwc" id="Dch-VD-6tO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYJ-Ij-hV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

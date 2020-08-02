@@ -21,6 +21,8 @@
 		952E19D924D715CB0019A7DE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */; };
 		9556344624D722AB00B472E8 /* ScoreboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */; };
 		9556344824D722C000B472E8 /* PlayerScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344724D722C000B472E8 /* PlayerScoreTableViewCell.swift */; };
+		9556344A24D72CA900B472E8 /* GameEmulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344924D72CA900B472E8 /* GameEmulatorViewController.swift */; };
+		9556344C24D730E600B472E8 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556344B24D730E600B472E8 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewController.swift; sourceTree = "<group>"; };
 		9556344724D722C000B472E8 /* PlayerScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreTableViewCell.swift; sourceTree = "<group>"; };
+		9556344924D72CA900B472E8 /* GameEmulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEmulatorViewController.swift; sourceTree = "<group>"; };
+		9556344B24D730E600B472E8 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				952E19D024D709C20019A7DE /* MainMenuViewController.swift */,
 				952E19D224D711530019A7DE /* SelectPlayerViewController.swift */,
 				9556344524D722AB00B472E8 /* ScoreboardTableViewController.swift */,
+				9556344924D72CA900B472E8 /* GameEmulatorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				952E19D524D7128F0019A7DE /* PlayerController.swift */,
+				9556344B24D730E600B472E8 /* GameController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			files = (
 				9556344824D722C000B472E8 /* PlayerScoreTableViewCell.swift in Sources */,
 				952E19D124D709C20019A7DE /* MainMenuViewController.swift in Sources */,
+				9556344A24D72CA900B472E8 /* GameEmulatorViewController.swift in Sources */,
 				9556344624D722AB00B472E8 /* ScoreboardTableViewController.swift in Sources */,
 				952E19CB24D706230019A7DE /* Players+Convenience.swift in Sources */,
 				952E19D624D7128F0019A7DE /* PlayerController.swift in Sources */,
@@ -221,6 +228,7 @@
 				952E19D924D715CB0019A7DE /* PlayerTableViewCell.swift in Sources */,
 				952E19B124D704DE0019A7DE /* AppDelegate.swift in Sources */,
 				952E19B324D704DE0019A7DE /* SceneDelegate.swift in Sources */,
+				9556344C24D730E600B472E8 /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
