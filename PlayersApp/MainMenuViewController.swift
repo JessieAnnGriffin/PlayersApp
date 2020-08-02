@@ -10,6 +10,7 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    let playerController = PlayerController()
     let cornerRadius = 20
 
     @IBOutlet weak var startButton: UIButton!
@@ -43,5 +44,21 @@ class MainMenuViewController: UIViewController {
         default:
             break
         }
+    }
+    @IBAction func addPlayer(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Add a new player.",
+                                                message: "Enter a name",
+                                                preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Player Name"
+        }
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (alert) in
+            let newPlayerTextField = alertController.textFields![0] as UITextField
+            if let newPlayer = newPlayerTextField.text {
+                self.playerController.createPlayer(name: newPlayer)
+            }
+        }
+        alertController.addAction(submitAction)
+        present(alertController, animated: true)
     }
 }
