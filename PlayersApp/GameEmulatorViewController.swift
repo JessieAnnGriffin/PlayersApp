@@ -19,6 +19,7 @@ class GameEmulatorViewController: UIViewController {
     @IBOutlet weak var tieButton: UIButton!
 
     var gameController: GameController?
+    var playerController: PlayerController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class GameEmulatorViewController: UIViewController {
         alertController.addAction(alertAction)
         self.present(alertController, animated: true)
     }
+    
     func updateScores(_ sender: UIButton) {
         guard let playerOne = gameController?.playerOne else {
             self.showAlert(player: "player one")
@@ -82,12 +84,18 @@ class GameEmulatorViewController: UIViewController {
         case playerOneWinsButton:
             playerOne.wins += 1
             playerTwo.losses += 1
+            print("\(String(describing: playerOne.name)) wins: \(playerOne.wins), \(String(describing: playerTwo.name)) losses: \(playerTwo.losses)")
+            try? CoreDataStack.shared.save()
         case playerTwoWinsButton:
             playerTwo.wins += 1
             playerOne.losses += 1
+            print("\(String(describing: playerOne.name)) losses: \(playerOne.losses), \(String(describing: playerTwo.name)) wins: \(playerTwo.wins)")
+            try? CoreDataStack.shared.save()
         case tieButton:
             playerOne.ties += 1
             playerTwo.ties += 1
+            print("\(String(describing: playerOne.name)) ties: \(playerOne.ties), \(String(describing: playerTwo.name)) ties: \(playerTwo.ties)")
+            try? CoreDataStack.shared.save()
         default:
             break
         }
