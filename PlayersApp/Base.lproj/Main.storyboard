@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Players App-->
+        <!--Main Menu-->
         <scene sceneID="VyJ-4q-LoR">
             <objects>
                 <viewController id="gs0-EZ-tud" customClass="MainMenuViewController" customModule="PlayersApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +38,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Select Player 1"/>
+                                        <connections>
+                                            <segue destination="tJF-XC-rih" kind="show" identifier="ShowSelectPlayer1" id="Z0z-7L-KuG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-wR-ukr">
                                         <rect key="frame" x="0.0" y="369" width="200" height="75"/>
@@ -45,6 +48,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Select Player 2"/>
+                                        <connections>
+                                            <segue destination="tJF-XC-rih" kind="show" identifier="ShowSelectPlayer2" id="1Fb-8P-e22"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOW-h1-TFh">
                                         <rect key="frame" x="0.0" y="492" width="200" height="75"/>
@@ -78,7 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k8g-em-rYu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Players App" id="SJ6-KN-Jr2"/>
+                    <navigationItem key="navigationItem" title="Main Menu" id="SJ6-KN-Jr2"/>
                     <connections>
                         <outlet property="addPlayerButton" destination="mOW-h1-TFh" id="CcP-48-7sT"/>
                         <outlet property="playerOneButton" destination="sJT-B9-5iL" id="4W2-YA-zj8"/>
@@ -90,6 +96,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEF-nT-mnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268.1159420289855" y="174.77678571428569"/>
+        </scene>
+        <!--Select Player-->
+        <scene sceneID="Ifp-dq-Af3">
+            <objects>
+                <viewController id="tJF-XC-rih" customClass="SelectPlayerViewController" customModule="PlayersApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aaC-VD-qL1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jMP-Q2-nLy">
+                                <rect key="frame" x="20" y="201" width="374" height="612"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" textLabel="hqq-75-MvP" style="IBUITableViewCellStyleDefault" id="24w-df-YYU" customClass="PlayerTableViewCell" customModule="PlayersApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="24w-df-YYU" id="Xba-l4-CMV">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hqq-75-MvP">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smM-H9-pi6">
+                                <rect key="frame" x="0.0" y="140" width="414" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sff-oL-mvT">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="By: Jessie Griffin" id="YcY-LQ-mLp">
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NP6-l8-WjB" firstAttribute="trailing" secondItem="smM-H9-pi6" secondAttribute="trailing" id="0fP-Ee-Xld"/>
+                            <constraint firstItem="sff-oL-mvT" firstAttribute="top" secondItem="jMP-Q2-nLy" secondAttribute="bottom" id="2ca-xA-KPU"/>
+                            <constraint firstItem="sff-oL-mvT" firstAttribute="bottom" secondItem="NP6-l8-WjB" secondAttribute="bottom" id="5RX-mm-TNp"/>
+                            <constraint firstItem="jMP-Q2-nLy" firstAttribute="leading" secondItem="NP6-l8-WjB" secondAttribute="leading" constant="20" id="Mvy-ch-pL1"/>
+                            <constraint firstItem="jMP-Q2-nLy" firstAttribute="top" secondItem="smM-H9-pi6" secondAttribute="bottom" constant="20" id="SXF-G9-ygL"/>
+                            <constraint firstItem="NP6-l8-WjB" firstAttribute="trailing" secondItem="jMP-Q2-nLy" secondAttribute="trailing" constant="20" id="Sip-JQ-ZP9"/>
+                            <constraint firstItem="smM-H9-pi6" firstAttribute="top" secondItem="NP6-l8-WjB" secondAttribute="top" id="ZD3-Sf-qTk"/>
+                            <constraint firstItem="sff-oL-mvT" firstAttribute="trailing" secondItem="NP6-l8-WjB" secondAttribute="trailing" id="d8v-kO-6ea"/>
+                            <constraint firstItem="sff-oL-mvT" firstAttribute="leading" secondItem="NP6-l8-WjB" secondAttribute="leading" id="pLM-mA-hp6"/>
+                            <constraint firstItem="smM-H9-pi6" firstAttribute="centerX" secondItem="aaC-VD-qL1" secondAttribute="centerX" id="pQa-hg-YHc"/>
+                            <constraint firstItem="smM-H9-pi6" firstAttribute="leading" secondItem="NP6-l8-WjB" secondAttribute="leading" id="zSJ-2L-iMM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NP6-l8-WjB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Player" id="C7v-h2-8Wj"/>
+                    <connections>
+                        <outlet property="playersTableView" destination="jMP-Q2-nLy" id="Sgk-vP-PHo"/>
+                        <outlet property="selectPlayerLabel" destination="smM-H9-pi6" id="chv-21-9ms"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jP0-9e-sGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="-23"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y3l-xP-S8l">
@@ -111,4 +189,7 @@
             <point key="canvasLocation" x="357.97101449275362" y="174.77678571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Z0z-7L-KuG"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -25,19 +25,23 @@ class MainMenuViewController: UIViewController {
         playerOneButton.layer.cornerRadius = CGFloat(cornerRadius)
         playerTwoButton.layer.cornerRadius = CGFloat(cornerRadius)
         addPlayerButton.layer.cornerRadius = CGFloat(cornerRadius)
-
-
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+        switch segue.identifier {
+        case "ShowSelectPlayer1":
+            if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
+                selectPlayerVC.title = "Select Player 1"
+            }
+        case "ShowSelectPlayer2":
+            if let selectPlayerVC = segue.destination as? SelectPlayerViewController {
+                selectPlayerVC.title = "Select Player 2"
+            }
+        default:
+            break
+        }
+    }
 }

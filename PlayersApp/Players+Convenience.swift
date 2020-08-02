@@ -11,14 +11,16 @@ import CoreData
 
 extension Player {
     convenience init(name: String,
-                                     wins: Int32 = 0,
-                                     losses: Int32 = 0,
-                                     ties: Int32 = 0,
-                                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+                     wins: Int32 = 0,
+                     losses: Int32 = 0,
+                     ties: Int32 = 0,
+                     identifier: UUID = UUID(),
+                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.name = name
         self.wins = wins
         self.losses = losses
         self.ties = ties
+        self.identifier = identifier
     }
 }

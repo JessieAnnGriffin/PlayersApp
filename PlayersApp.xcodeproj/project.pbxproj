@@ -16,6 +16,9 @@
 		952E19C924D705EF0019A7DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19C824D705EF0019A7DE /* CoreDataStack.swift */; };
 		952E19CB24D706230019A7DE /* Players+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19CA24D706230019A7DE /* Players+Convenience.swift */; };
 		952E19D124D709C20019A7DE /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D024D709C20019A7DE /* MainMenuViewController.swift */; };
+		952E19D324D711530019A7DE /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D224D711530019A7DE /* SelectPlayerViewController.swift */; };
+		952E19D624D7128F0019A7DE /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D524D7128F0019A7DE /* PlayerController.swift */; };
+		952E19D924D715CB0019A7DE /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		952E19C824D705EF0019A7DE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		952E19CA24D706230019A7DE /* Players+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Players+Convenience.swift"; sourceTree = "<group>"; };
 		952E19D024D709C20019A7DE /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		952E19D224D711530019A7DE /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
+		952E19D524D7128F0019A7DE /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,9 @@
 		952E19AF24D704DE0019A7DE /* PlayersApp */ = {
 			isa = PBXGroup;
 			children = (
+				952E19D724D715A40019A7DE /* Custom Views */,
 				952E19C724D705D10019A7DE /* Model */,
+				952E19D424D712790019A7DE /* Controllers */,
 				952E19CF24D7093C0019A7DE /* View Controllers */,
 				952E19CD24D707760019A7DE /* Storyboards */,
 				952E19CE24D707900019A7DE /* Resources */,
@@ -104,8 +112,25 @@
 			isa = PBXGroup;
 			children = (
 				952E19D024D709C20019A7DE /* MainMenuViewController.swift */,
+				952E19D224D711530019A7DE /* SelectPlayerViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		952E19D424D712790019A7DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				952E19D524D7128F0019A7DE /* PlayerController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		952E19D724D715A40019A7DE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				952E19D824D715CB0019A7DE /* PlayerTableViewCell.swift */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,8 +206,11 @@
 			files = (
 				952E19D124D709C20019A7DE /* MainMenuViewController.swift in Sources */,
 				952E19CB24D706230019A7DE /* Players+Convenience.swift in Sources */,
+				952E19D624D7128F0019A7DE /* PlayerController.swift in Sources */,
 				952E19C924D705EF0019A7DE /* CoreDataStack.swift in Sources */,
+				952E19D324D711530019A7DE /* SelectPlayerViewController.swift in Sources */,
 				952E19BB24D704DE0019A7DE /* PlayersApp.xcdatamodeld in Sources */,
+				952E19D924D715CB0019A7DE /* PlayerTableViewCell.swift in Sources */,
 				952E19B124D704DE0019A7DE /* AppDelegate.swift in Sources */,
 				952E19B324D704DE0019A7DE /* SceneDelegate.swift in Sources */,
 			);
