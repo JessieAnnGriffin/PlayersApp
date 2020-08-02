@@ -29,7 +29,6 @@ class MainMenuViewController: UIViewController {
         addPlayerButton.layer.cornerRadius = CGFloat(cornerRadius)
     }
     
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -51,6 +50,7 @@ class MainMenuViewController: UIViewController {
         case "ShowGameEmulator":
             if let gameVC = segue.destination as? GameEmulatorViewController {
                 gameVC.gameController = gameController
+                gameVC.playerController = playerController
             }
         default:
             break

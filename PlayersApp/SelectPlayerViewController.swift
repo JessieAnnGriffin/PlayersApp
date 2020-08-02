@@ -62,6 +62,14 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
 
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+
     func showAlert(player: Player) {
         self.checkPlayer(player: player)
         guard let player = player.name else { return }
