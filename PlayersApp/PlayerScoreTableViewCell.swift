@@ -22,16 +22,11 @@ class PlayerScoreTableViewCell: UITableViewCell {
     }
 
     private func updateViews() {
-//        if let player = player {
-//            nameLabel.text = player.name
-//            winsLabel.text = "\(player.wins)"
-//            lossesLabel.text = "\(player.losses)"
-//            tiesLabel.text = "\(player.ties)"
-//        }
-
-        nameLabel.text = player?.name
-        winsLabel.text = "\(String(describing: player?.wins))"
-        lossesLabel.text = "\(String(describing: player?.losses))"
-        tiesLabel.text = "\(String(describing: player?.ties))"
+        if let player = player {
+            nameLabel.text = player.name
+            winsLabel.text = "\(player.wins)"
+            lossesLabel.text = "\(player.losses)"
+            tiesLabel.text = "\(player.ties)"
+        }
     }
 }

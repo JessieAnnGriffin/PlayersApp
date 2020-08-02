@@ -11,30 +11,26 @@ import CoreData
 
 class ScoreboardTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var playerController: PlayerController?
-    var gameController: GameController?
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     private lazy var fetchedResultsController: NSFetchedResultsController<Player> = {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
         fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "wins", ascending: false),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "name",
+                                             sectionNameKeyPath: nil,
                                              cacheName: nil)
         frc.delegate = self
         try! frc.performFetch()
         return frc
     }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.reloadData()
-    }
 
     // MARK: - Table view data source
 

@@ -43,17 +43,13 @@ class MainMenuViewController: UIViewController {
                 selectPlayerVC.title = "Select Player 2"
                 selectPlayerVC.gameController = gameController
             }
-        case "ShowScoreboard":
-            if let scoreboardVC = segue.destination as? ScoreboardTableViewController {
-                scoreboardVC.playerController = playerController
-            }
         case "ShowGameEmulator":
             if let gameVC = segue.destination as? GameEmulatorViewController {
                 gameVC.gameController = gameController
                 gameVC.playerController = playerController
             }
         default:
-            break
+            return
         }
     }
     @IBAction func addPlayer(_ sender: UIButton) {
