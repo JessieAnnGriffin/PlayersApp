@@ -25,7 +25,7 @@ class GameEmulatorViewController: UIViewController {
         playerOneWinsButton.layer.cornerRadius = CGFloat(cornerRadius)
         playerTwoWinsButton.layer.cornerRadius = CGFloat(cornerRadius)
         tieButton.layer.cornerRadius = CGFloat(cornerRadius)
-        
+
         updateViews()
     }
     
@@ -48,10 +48,9 @@ class GameEmulatorViewController: UIViewController {
         playerOneLabel.text = playerOne
         playerTwoLabel.text = playerTwo
 
-        playerOneWinsButton.titleLabel?.text = "\(playerOne) Wins!"
-        playerTwoWinsButton.titleLabel?.text = "\(playerTwo) Wins!"
-        tieButton.titleLabel?.text = "It's a tie!"
-
+        playerOneWinsButton.setTitle("\(playerOne) Wins!", for: .normal)
+        playerTwoWinsButton.setTitle("\(playerTwo) Wins!", for: .normal)
+        tieButton.setTitle("It's a tie!", for: .normal)
     }
 
     func showAlert(player: String) {

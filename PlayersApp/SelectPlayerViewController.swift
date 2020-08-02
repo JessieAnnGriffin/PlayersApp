@@ -16,13 +16,12 @@ class SelectPlayerViewController: UIViewController, NSFetchedResultsControllerDe
     private lazy var fetchedResultsController: NSFetchedResultsController<Player> = {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "wins", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "wins",
+                                             sectionNameKeyPath: nil,
                                              cacheName: nil)
         frc.delegate = self
         try! frc.performFetch()
@@ -64,11 +63,12 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func showAlert(player: Player) {
+        self.checkPlayer(player: player)
         guard let player = player.name else { return }
         if title == "Select Player 1" {
             let alertController = UIAlertController(
-                title: "Player One is \(player)",
-                message: "",
+                title: "Player One",
+                message: "\(player)",
                 preferredStyle: .alert)
             let alertAction = UIAlertAction(
                 title: "OK",
@@ -80,8 +80,8 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
             self.present(alertController, animated: true)
         } else {
             let alertController = UIAlertController(
-                title: "Player Two is \(player)",
-                message: "",
+                title: "Player Two",
+                message: "\(player)",
                 preferredStyle: .alert)
             let alertAction = UIAlertAction(
                 title: "OK",
@@ -91,6 +91,25 @@ extension SelectPlayerViewController: UITableViewDelegate, UITableViewDataSource
             })
             alertController.addAction(alertAction)
             self.present(alertController, animated: true)
+        }
+    }
+
+    func checkPlayer(player: Player) {
+        if player == gameController?.playerOne || player == gameController?.playerTwo {
+            let alertController = UIAlertController(
+                title: "Player has already been selected.",
+                message: "Please select a different player",
+                preferredStyle: .alert)
+            let alertAction = UIAlertAction(
+                title: "OK",
+                style: UIAlertAction.Style.default,
+                handler: { _ in
+                    self.navigationController?.popToRootViewController(animated: true)
+            })
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
+        } else {
+            return
         }
     }
 }
